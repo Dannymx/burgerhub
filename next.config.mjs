@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import BundleAnalyzer from "@next/bundle-analyzer";
 
 const withBundleAnalyzer = BundleAnalyzer({
