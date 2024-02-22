@@ -3,7 +3,7 @@
   "extends": [
     "airbnb-base",
     "next/core-web-vitals", // Needed to avoid warning in next.js build: 'The Next.js plugin was not detected in your ESLint configuration'
-    "plugin:prettier/recommended"
+    "prettier"
   ],
   "overrides": [
     // Configuration for TypeScript files
@@ -14,7 +14,8 @@
         "airbnb",
         "airbnb-typescript",
         "next/core-web-vitals",
-        "plugin:prettier/recommended"
+        "plugin:@tanstack/eslint-plugin-query/recommended",
+        "prettier"
       ],
       "parserOptions": {
         "project": "./tsconfig.json"
