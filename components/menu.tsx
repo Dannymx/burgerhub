@@ -1,16 +1,15 @@
-import type { z } from "zod";
 import { ProductCard } from "./product-card";
 
-import type { productSchema } from "@/schema/products";
+import type { Product } from "@/lib/types/products";
 
 type Props = {
-  products: Array<z.infer<typeof productSchema>>;
+  products: Array<Product>;
 };
 
 export const Menu = ({ products }: Props) => (
-  <div className="grid grid-cols-4 gap-4">
+  <>
     {products.map((product) => (
       <ProductCard product={product} key={product.id} />
     ))}
-  </div>
+  </>
 );
