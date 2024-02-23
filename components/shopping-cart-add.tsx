@@ -10,7 +10,7 @@ type Props = {
   product: Product;
 };
 
-export const AddToCart = ({ product }: Props) => {
+export const ShoppingCartAdd = ({ product }: Props) => {
   const cart = useCartStore();
 
   const handleAddToCart = () => {

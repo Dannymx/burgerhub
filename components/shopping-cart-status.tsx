@@ -7,7 +7,7 @@ import { Button } from "./ui/button";
 
 import { useCartStore } from "@/lib/stores/cart";
 
-export const CartCount = () => {
+export const ShoppingCartStatus = () => {
   const products = useCartStore((state) => state.products);
 
   return (

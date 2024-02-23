@@ -2,7 +2,7 @@ import { Home, Search } from "lucide-react";
 import Link from "next/link";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
-import { CartCount } from "./cart-count";
+import { ShoppingCartStatus } from "./shopping-cart-status";
 import { ThemeSelector } from "./theme-selector";
 
 export const Navigation = () => (
@@ -27,7 +27,7 @@ export const Navigation = () => (
           size={18}
         />
       </div>
-      <CartCount />
+      <ShoppingCartStatus />
     </div>
   </div>
 );

@@ -2,7 +2,9 @@ import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import type { Product, ProductInCart } from "../types/products";
 
-type CartState = {
+export type CartState = {
+  hasHydrated: boolean;
+  setHasHydrated: (state: boolean) => void;
   products: Array<ProductInCart>;
   add: (product: Product, qty?: number) => void;
   delete: (product: Product) => void;
@@ -11,6 +13,12 @@ type CartState = {
 export const useCartStore = create<CartState>()(
   persist(
     (set) => ({
+      hasHydrated: false,
+      setHasHydrated: (state) => {
+        set({
+          hasHydrated: state,
+        });
+      },
       products: [],
       add: (product, qty = 1) =>
         set((state) => {
@@ -42,6 +50,11 @@ export const useCartStore = create<CartState>()(
     }),
     {
       name: "cart",
+      onRehydrateStorage: () => (state) => {
+        if (state) {
+          state.setHasHydrated(true);
+        }
+      },
     },
   ),
 );

@@ -2,7 +2,7 @@ import { ArrowLeft } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-import { AddToCart } from "@/components/add-to-cart";
+import { ShoppingCartAdd } from "@/components/shopping-cart-add";
 import { getProductData } from "@/lib/queries/products";
 
 export const dynamicParams = true;
@@ -43,7 +43,7 @@ export default async function Product({
         <p>{product.description}</p>
         <p>Nutrition: {product.calorie} calories</p>
         <div className="flex items-center justify-center py-8">
-          <AddToCart product={product} />
+          <ShoppingCartAdd product={product} />
         </div>
       </div>
     </div>
