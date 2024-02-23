@@ -1,4 +1,4 @@
-import { Home, Search, ShoppingCart } from "lucide-react";
+import { Home, Search } from "lucide-react";
 import Link from "next/link";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
@@ -27,12 +27,7 @@ export const Navigation = () => (
           size={18}
         />
       </div>
-      <Button variant="ghost" size="icon" asChild>
-        <Link href="/cart" className="relative">
-          <ShoppingCart size={24} />
-          <CartCount />
-        </Link>
-      </Button>
+      <CartCount />
     </div>
   </div>
 );

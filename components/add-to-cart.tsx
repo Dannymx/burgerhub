@@ -14,7 +14,7 @@ export const AddToCart = ({ product }: Props) => {
   const cart = useCartStore();
 
   const handleAddToCart = () => {
-    cart.addToCart(product);
+    cart.add(product);
 
     toast.success(`Added ${product.name} to cart`);
   };

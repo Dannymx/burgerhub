@@ -4,14 +4,15 @@ import type { Product, ProductInCart } from "../types/products";
 
 type CartState = {
   products: Array<ProductInCart>;
-  addToCart: (product: Product, qty?: number) => void;
+  add: (product: Product, qty?: number) => void;
+  delete: (product: Product) => void;
 };
 
 export const useCartStore = create<CartState>()(
   persist(
     (set) => ({
       products: [],
-      addToCart: (product, qty = 1) =>
+      add: (product, qty = 1) =>
         set((state) => {
           // We could make this better by switching to a O(1) Map, but for now this is sufficient
           const productInCart = state.products.find(
@@ -29,6 +30,14 @@ export const useCartStore = create<CartState>()(
 
           // If not present, just add it with the requested qty
           return { products: [...state.products, { ...product, qty }] };
+        }),
+      delete: (product) =>
+        set((state) => {
+          const updatedProducts = state.products.filter(
+            (item) => item.id !== product.id,
+          );
+
+          return { products: [...updatedProducts] };
         }),
     }),
     {
