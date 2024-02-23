@@ -6,7 +6,9 @@ import { ThemeSelector } from "./theme-selector";
 export const Navigation = () => (
   <div className="flex flex-row justify-between">
     <div className="flex flex-row justify-center items-center gap-4">
-      <h1 className="uppercase font-bold text-xl">Burger</h1>
+      <h1 className="uppercase font-bold text-xl text-lime-600 dark:text-lime-300">
+        Burger
+      </h1>
       <Link href="/">
         <Home size={24} />
       </Link>

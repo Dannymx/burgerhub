@@ -21,7 +21,10 @@ export default async function Product({
 
   return (
     <div className="flex flex-col bg-muted p-6 rounded-3xl gap-6">
-      <Link className="flex flex-row items-center text-xl gap-2" href="/">
+      <Link
+        className="flex flex-row max-w-max items-center text-xl gap-2"
+        href="/"
+      >
         <ArrowLeft className="inline-block" size={28} /> Go Back
       </Link>
       <div className="w-4/5 self-center gap-2 flex flex-col">

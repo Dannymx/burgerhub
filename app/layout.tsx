@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { Toaster } from "sonner";
 import "./globals.css";
 
 import { Navigation } from "@/components/navigation";
@@ -29,6 +30,7 @@ export default function RootLayout({
             <Navigation />
             {children}
           </main>
+          <Toaster position="top-center" expand richColors />
         </ThemeProvider>
       </body>
     </html>
