@@ -2,7 +2,7 @@ import { ArrowLeft } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-import { Button } from "@/components/ui/button";
+import { AddToCart } from "@/components/add-to-cart";
 import { getProductData } from "@/lib/queries/products";
 
 export const dynamicParams = true;
@@ -31,6 +31,7 @@ export default async function Product({
             className="object-cover"
             alt={`Image of ${product.name}`}
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            priority
             fill
           />
         </div>
@@ -39,9 +40,7 @@ export default async function Product({
         <p>{product.description}</p>
         <p>Nutrition: {product.calorie} calories</p>
         <div className="flex items-center justify-center py-8">
-          <Button className="bg-muted-foreground rounded-full text-xl p-6 px-10">
-            Add to cart
-          </Button>
+          <AddToCart product={product} />
         </div>
       </div>
     </div>
