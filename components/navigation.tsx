@@ -1,6 +1,8 @@
 import { Home, Search, ShoppingCart } from "lucide-react";
 import Link from "next/link";
+import { Button } from "./ui/button";
 import { Input } from "./ui/input";
+import { CartCount } from "./cart-count";
 import { ThemeSelector } from "./theme-selector";
 
 export const Navigation = () => (
@@ -9,9 +11,11 @@ export const Navigation = () => (
       <h1 className="uppercase font-bold text-xl text-lime-600 dark:text-lime-300">
         Burger
       </h1>
-      <Link href="/">
-        <Home size={24} />
-      </Link>
+      <Button variant="ghost" size="icon" asChild>
+        <Link href="/">
+          <Home size={24} />
+        </Link>
+      </Button>
     </div>
     <div className="flex flex-row justify-center items-center gap-4">
       <ThemeSelector />
@@ -23,7 +27,12 @@ export const Navigation = () => (
           size={18}
         />
       </div>
-      <ShoppingCart size={24} />
+      <Button variant="ghost" size="icon" asChild>
+        <Link href="/cart" className="relative">
+          <ShoppingCart size={24} />
+          <CartCount />
+        </Link>
+      </Button>
     </div>
   </div>
 );
