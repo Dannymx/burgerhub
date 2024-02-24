@@ -1,13 +1,19 @@
-import { Menu } from "@/components/menu";
+import { ProductCard } from "@/components/product-card";
 import { getProductData } from "@/lib/queries/products";
 
-export default async function Home() {
+export type Props = {
+  searchParams: { q: string };
+};
+
+export default async function Home({ searchParams }: Props) {
   // This runs on the server
-  const menu = await getProductData();
+  const menu = await getProductData(searchParams.q);
 
   return (
     <div className="grid grid-cols-4 gap-4">
-      <Menu products={menu.products} />
+      {menu.map((product) => (
+        <ProductCard product={product} key={product.id} />
+      ))}
     </div>
   );
 }

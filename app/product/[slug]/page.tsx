@@ -13,9 +13,7 @@ export default async function Product({
   params: { slug: string };
 }) {
   // Find the current product by slug
-  const product = (await getProductData()).products.find(
-    (item) => item.slug === slug,
-  );
+  const product = (await getProductData()).find((item) => item.slug === slug);
 
   if (!product) return <h1>Product not found</h1>;
 
@@ -53,5 +51,5 @@ export default async function Product({
 export async function generateStaticParams() {
   const menu = await getProductData();
 
-  return menu.products.map((product) => ({ slug: product.slug }));
+  return menu.map((product) => ({ slug: product.slug }));
 }

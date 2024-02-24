@@ -1,7 +1,8 @@
-import { Home, Search } from "lucide-react";
+import { Suspense } from "react";
+import { Home } from "lucide-react";
 import Link from "next/link";
 import { Button } from "./ui/button";
-import { Input } from "./ui/input";
+import { SearchBox } from "./search";
 import { ShoppingCartStatus } from "./shopping-cart-status";
 import { ThemeSelector } from "./theme-selector";
 
@@ -20,12 +21,9 @@ export const Navigation = () => (
     <div className="flex flex-row justify-center items-center gap-4">
       <ThemeSelector />
       <div className="relative flex items-center">
-        <Search className="absolute left-2 text-muted-foreground" size={20} />
-        <Input
-          className="pl-8 text-md"
-          placeholder="Type to search"
-          size={18}
-        />
+        <Suspense>
+          <SearchBox />
+        </Suspense>
       </div>
       <ShoppingCartStatus />
     </div>
