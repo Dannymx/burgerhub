@@ -8,6 +8,7 @@ export type CartState = {
   products: Array<ProductInCart>;
   add: (product: Product, qty?: number) => void;
   delete: (product: Product) => void;
+  clear: () => void;
 };
 
 export const useCartStore = create<CartState>()(
@@ -47,6 +48,7 @@ export const useCartStore = create<CartState>()(
 
           return { products: [...updatedProducts] };
         }),
+      clear: () => set(() => ({ products: [] })),
     }),
     {
       name: "cart",

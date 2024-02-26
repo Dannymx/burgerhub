@@ -5,6 +5,7 @@ import { Button } from "./ui/button";
 import { SearchBox } from "./search";
 import { ShoppingCartStatus } from "./shopping-cart-status";
 import { ThemeSelector } from "./theme-selector";
+import { UserStatus } from "./user-status";
 
 export const Navigation = () => (
   <div className="flex flex-row justify-between">
@@ -26,6 +27,7 @@ export const Navigation = () => (
         </Suspense>
       </div>
       <ShoppingCartStatus />
+      <UserStatus />
     </div>
   </div>
 );

@@ -1,12 +1,13 @@
 "use client";
 
+import type { ReactNode } from "react";
 import { Trash2 } from "lucide-react";
 import Image from "next/image";
 import { Button } from "./ui/button";
 
 import { useCartStore } from "@/lib/stores/cart";
 
-export const ShoppingCart = () => {
+export const ShoppingCart = ({ children }: { children: ReactNode }) => {
   const cart = useCartStore((state) => state);
 
   // Wait for state to be hydrated from localstorage
@@ -15,6 +16,11 @@ export const ShoppingCart = () => {
 
   if (!cart.products.length)
     return <h1 className="text-center">Your shopping cart is empty</h1>;
+
+  const total = cart.products.reduce(
+    (prev, curr) => prev + curr.price * curr.qty,
+    0,
+  );
 
   return (
     <div className="flex flex-col gap-8 w-4/5 self-center">
@@ -49,6 +55,8 @@ export const ShoppingCart = () => {
           </div>
         </div>
       ))}
+      <p className="text-2xl text-right">Your total is: ${total / 100}</p>
+      {children}
     </div>
   );
 };
