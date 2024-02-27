@@ -25,7 +25,7 @@ export default async function Product({
       >
         <ArrowLeft className="inline-block" size={28} /> Go Back
       </Link>
-      <div className="w-4/5 self-center gap-2 flex flex-col">
+      <div className="w-full sm:w-4/5 self-center gap-2 flex flex-col">
         <div className="aspect-video overflow-hidden rounded-2xl relative">
           <Image
             src={`${product.image}?fit=crop&w=800`}

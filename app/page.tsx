@@ -10,7 +10,7 @@ export default async function Home({ searchParams }: Props) {
   const menu = await getProductData(searchParams.q);
 
   return (
-    <div className="grid grid-cols-4 gap-4">
+    <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-4 gap-4">
       {menu.map((product) => (
         <ProductCard product={product} key={product.id} />
       ))}

@@ -23,11 +23,14 @@ export const ShoppingCart = ({ children }: { children: ReactNode }) => {
   );
 
   return (
-    <div className="flex flex-col gap-8 w-4/5 self-center">
+    <div className="flex flex-col gap-8 w-full sm:w-4/5 self-center">
       {cart.products.map((product) => (
-        <div key={product.id} className="flex justify-between gap-4 h-[80px] ">
-          <div className="gap-8 items-center flex-row flex grow w-1/2">
-            <div className="rounded-full aspect-square relative h-full overflow-hidden">
+        <div
+          key={product.id}
+          className="flex justify-between gap-4 h-[80px] text:md sm:text-xl"
+        >
+          <div className="gap-2 sm:gap-8 items-center flex-row flex grow w-1/2">
+            <div className="rounded-full aspect-square relative h-2/3 sm:h-full overflow-hidden">
               <Image
                 src={`${product.image}?fit=crop&w=200`}
                 className="object-cover"
@@ -37,14 +40,12 @@ export const ShoppingCart = ({ children }: { children: ReactNode }) => {
                 fill
               />
             </div>
-            <span className="text-xl">
+            <span>
               {product.name} ({product.qty})
             </span>
           </div>
           <div className="gap-8 items-center justify-end flex-row flex">
-            <span className="text-xl">
-              ${(product.price * product.qty) / 100}
-            </span>
+            <span>${(product.price * product.qty) / 100}</span>
             <Button
               variant="ghost"
               size="icon"
