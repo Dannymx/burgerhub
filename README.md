@@ -2,7 +2,7 @@ This is BurgerHub, a demo app to showcase a basic food ordering system
 
 ## Tech stack
 
-- Next.js 14
+- Next.js 14 with app router
 - Server, client components, as well as server actions
 - TypeScript in strict mode
 - TailwindCSS with Shadcn UI

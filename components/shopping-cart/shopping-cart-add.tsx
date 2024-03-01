@@ -1,7 +1,7 @@
 "use client";
 
 import { toast } from "sonner";
-import { Button } from "./ui/button";
+import { Button } from "../ui/button";
 
 import { useCartStore } from "@/lib/stores/cart";
 import type { Product } from "@/lib/types/products";

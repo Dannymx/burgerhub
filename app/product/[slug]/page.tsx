@@ -2,7 +2,7 @@ import { ArrowLeft } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-import { ShoppingCartAdd } from "@/components/shopping-cart-add";
+import { ShoppingCartAdd } from "@/components/shopping-cart/shopping-cart-add";
 import { getProductData } from "@/lib/queries/products";
 
 export const dynamicParams = true;

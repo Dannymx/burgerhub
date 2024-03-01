@@ -5,11 +5,11 @@ import { useEffect } from "react";
 import { useCartStore } from "@/lib/stores/cart";
 
 export default function Checkout() {
-  const cart = useCartStore();
+  const clear = useCartStore((state) => state.clear);
 
   useEffect(() => {
-    cart.clear();
-  }, []);
+    clear();
+  }, [clear]);
 
   return (
     <div className="flex flex-col bg-muted p-6 rounded-3xl gap-6 text-center">

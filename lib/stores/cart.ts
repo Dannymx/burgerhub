@@ -7,6 +7,7 @@ export type CartState = {
   setHasHydrated: (state: boolean) => void;
   products: Array<ProductInCart>;
   add: (product: Product, qty?: number) => void;
+  update: (product: ProductInCart, qty: number) => void;
   delete: (product: Product) => void;
   clear: () => void;
 };
@@ -39,6 +40,14 @@ export const useCartStore = create<CartState>()(
 
           // If not present, just add it with the requested qty
           return { products: [...state.products, { ...product, qty }] };
+        }),
+      update: (product, qty) =>
+        set((state) => {
+          const updatedProducts = state.products.map((item) =>
+            item.id === product.id ? { ...item, qty } : item,
+          );
+
+          return { products: updatedProducts };
         }),
       delete: (product) =>
         set((state) => {
