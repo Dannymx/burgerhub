@@ -1,5 +1,5 @@
 import { ShoppingCart } from "@/components/shopping-cart";
-import { ShoppingCartOrder } from "@/components/shopping-cart-order";
+import { ShoppingCartOrder } from "@/components/shopping-cart/shopping-cart-order";
 
 export default function Cart() {
   return (

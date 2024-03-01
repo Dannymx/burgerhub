@@ -1,7 +1,7 @@
 "use client";
 
 import type { ReactNode } from "react";
-import { ShoppingCartItem } from "./shopping-cart-item";
+import { ShoppingCartItem } from "./shopping-cart/shopping-cart-item";
 
 import { useCartStore } from "@/lib/stores/cart";
 

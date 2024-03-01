@@ -1,6 +1,6 @@
 import { Minus, Plus, Trash2 } from "lucide-react";
 import Image from "next/image";
-import { Button } from "./ui/button";
+import { Button } from "../ui/button";
 
 import { type CartState } from "@/lib/stores/cart";
 import type { ProductInCart } from "@/lib/types/products";

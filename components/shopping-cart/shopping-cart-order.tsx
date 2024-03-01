@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Button } from "./ui/button";
+import { Button } from "../ui/button";
 
 import { auth } from "@/auth";
 import { signInAction } from "@/lib/actions/auth";
